@@ -20,6 +20,6 @@ object Main extends App{
 
   Util.prettyPrint(groupBy (xs) (_.get("source")))
 
-  Util.prettyPrint(groupBy (xs) (_.get("owner_id")) filterNot(_._2 == 1) sortBy(_._2))
+  Util.prettyPrint(groupBy (xs) (_.get("owner_id")) filterNot(_._2 == 1) sortBy(- _._2) take 20)
 
 }
